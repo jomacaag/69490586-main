@@ -1,0 +1,11 @@
+sort1 uses: Bubble Sort
+
+How do you know?: was faster that selection sort at already sorted data sets, but slower than merge with randomized data sets.
+
+sort2 uses: Merge Sort
+
+How do you know?: Was the fastest with the largets data sets, by a large margin
+
+sort3 uses: Selection Sort
+
+How do you know?: With a large, sorted data set it took the longest. where bubble sort should have an advantage over an already sorted data input

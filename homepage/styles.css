@@ -1,0 +1,26 @@
+.linkedinicon{
+  width: 16px;
+  height: 16px;
+  fill: #0072b1;
+
+  }
+.githubicon{
+  width: 16px;
+  height: 16px;
+  fill: #ffffff;
+}
+.nav-link{
+  color: #8a8c8e;
+}
+.nav-item:hover .nav-link {
+  color: #fff;
+}
+main{
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+main section{
+  padding: 20px;
+}

@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+
+{% block body %}
+    {% for n in birthdays %}
+        <tr>
+            <td>{{ n.name }}</td>
+            <td>{{ n.month }}/{{ n.day }}</td>
+        </tr>
+    {% endfor %}
+
+
+{% endblock %}

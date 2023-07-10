@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+    <h6 class="me-auto text-end">Cash Balance: {{ cash | usd }}</h6>
+    <h3>Buy Shares</h3>
+    <div>
+        <table class="table">
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Shares</th>
+                <th>Total</th>
+                <th>Buy</th>
+            </tr>
+            <tr>
+                <td>{{ sdata.symbol }}</td>
+                <td>{{ sdata.name }}</td>
+                <td>{{ sdata.price | usd }}</td>
+                <td><form action="/buy" method="post"><input autocomplete="off" autofocus class="form-control mx-auto " id="shares" name="shares" placeholder="Number of Shares" type="number" oninput="updateTotal()" style=" text-align: right" min="0"></td>
+                <td id="total">{{ sdata.price | usd }}</td>
+                <input type="hidden" id="symbol" name="symbol" value="{{sdata.symbol}}">
+                <td><button class="btn btn-primary" type="submit">Buy</button></td>
+            </form>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function updateTotal() {
+            var sharesInput = document.getElementById("shares");
+            var shares = parseFloat(sharesInput.value);
+            var price = parseFloat("{{ sdata.price }}");
+            var total = shares * price;
+            var totalDisplay = document.getElementById("total");
+            totalDisplay.innerHTML = "$" + total.toFixed(2);
+        }
+    </script>
+{% endblock %}
